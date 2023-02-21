@@ -4,9 +4,7 @@ from tile import Tile
 from levels import LEVEL
 
 class Board():
-  """
-  Hold all game elements
-  """
+  """Hold all game elements"""
   
   # Constructor
   def __init__(self, screen, tile_group):
@@ -30,9 +28,7 @@ class Board():
     self.background_rect = self.background_image.get_rect() 
     self.background_rect.topleft = (0, 0)
 
-  """
-  Methods
-  """
+  """Methods"""
 
   # Helper function that draws text
   def __draw_text(self, text, font, color, x, y):

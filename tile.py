@@ -1,9 +1,8 @@
 import pygame
 
 class Tile(pygame.sprite.Sprite):
-  """
-  Generic tile object that will build the board 32 x 32 at a time
-  """
+  """Generic tile object that will build the board 32 x 32 at a time"""
+  
   def __init__(self, x, y, tile_type):
     super().__init__()
 
