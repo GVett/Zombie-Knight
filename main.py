@@ -1,6 +1,7 @@
 # Welcome to Zombie Knights
 import pygame
 import settings as gs
+from board import Board
 
 
 def setup():
@@ -25,16 +26,14 @@ def main():
   screen, clock = setup() 
 
   # Create groups 
-  
+  tile_group = pygame.sprite.Group()
 
   # Create game objects 
- 
+  board = Board(screen, tile_group)
 
-  # Background image 
-  background_image = pygame.transform.scale(pygame.image.load("assets/images/background.png"), (gs.WINDOW_WIDTH, gs.WINDOW_HEIGHT))
-  background_rect = background_image.get_rect() 
-  background_rect.topleft = (0, 0)
-    
+  # Testing (NOT PRODUCTION)
+  board.generate_level()
+  
   # Runtime variable
   running = True 
 
@@ -43,11 +42,9 @@ def main():
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
         running = False 
-
-    # Draw background 
-    screen.blit(background_image, background_rect)
     
     # Update the objects 
+    board.draw()
        
 
     pygame.display.update() 
